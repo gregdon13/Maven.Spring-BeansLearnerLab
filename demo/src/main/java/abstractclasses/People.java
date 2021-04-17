@@ -13,6 +13,7 @@ public abstract class People<PersonType extends Person> implements Iterable<Pers
         this.personList = personList;
     }
 
+    @SafeVarargs
     public People(PersonType... person) {
         personList = new ArrayList<>();
         personList.addAll(Arrays.asList(person));
