@@ -14,21 +14,20 @@ public class StudentConfig {
     @Bean(name = "students")
     public Students currentStudents() {
         Student greg = new Student(1, "Greg");
-//        Student jorge = new Student(2, "Jorge");
-//        Student kelly = new Student(3, "Kelly");
-//        Student chris = new Student(4, "Chris");
-//        Student ashley = new Student(5, "Ashley");
-//        Student ryan = new Student(6, "Ryan");
-//        Student hazel = new Student(7, "Hazel");
-//        Student justin = new Student(8, "Justin");
-//        Student theresa = new Student(9, "Theresa");
-//        Student mike = new Student(10, "Mike");
-//        Student lena = new Student(11, "Lena");
-//        Student monali = new Student(12, "Monali");
-//        Student abe = new Student(13, "Abe");
-//        Student xiong = new Student(14, "Xiong");
-//        return new Students(greg, jorge, kelly, chris, ashley, ryan, hazel, justin, theresa, mike, lena, monali, abe, xiong);
-        return new Students(greg);
+        Student jorge = new Student(2, "Jorge");
+        Student kelly = new Student(3, "Kelly");
+        Student chris = new Student(4, "Chris");
+        Student ashley = new Student(5, "Ashley");
+        Student ryan = new Student(6, "Ryan");
+        Student hazel = new Student(7, "Hazel");
+        Student justin = new Student(8, "Justin");
+        Student theresa = new Student(9, "Theresa");
+        Student mike = new Student(10, "Mike");
+        Student lena = new Student(11, "Lena");
+        Student monali = new Student(12, "Monali");
+        Student abe = new Student(13, "Abe");
+        Student xiong = new Student(14, "Xiong");
+        return new Students(greg, jorge, kelly, chris, ashley, ryan, hazel, justin, theresa, mike, lena, monali, abe, xiong);
     }
 
     @Bean

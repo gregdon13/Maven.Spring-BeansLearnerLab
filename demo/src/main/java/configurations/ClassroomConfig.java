@@ -9,7 +9,7 @@ import org.springframework.context.annotation.DependsOn;
 public class ClassroomConfig {
 
     @Bean
-    @DependsOn({"students", "instructors"})
+    //@DependsOn({"students", "instructors"})
     public Classroom currentCohort() {
         StudentConfig studentConfig = new StudentConfig();
         InstructorsConfig instructorsConfig = new InstructorsConfig();
@@ -17,7 +17,7 @@ public class ClassroomConfig {
     }
 
     @Bean
-    @DependsOn({"previousStudents", "instructors"})
+    //@DependsOn({"previousStudents", "instructors"})
     public Classroom previousCohort() {
         StudentConfig studentConfig = new StudentConfig();
         InstructorsConfig instructorsConfig = new InstructorsConfig();
