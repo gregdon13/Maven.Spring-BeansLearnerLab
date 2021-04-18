@@ -16,4 +16,17 @@ public class Classroom {
             teacher.teach(s, numberOfHours/students.size());
         }
     }
+
+    @Override
+    public String toString() {
+        String classroom = "Classroom{";
+        for (Student s : this.students) {
+            classroom += s.toString();
+        }
+        for (Instructor i : this.instructors) {
+            classroom += i.toString();
+        }
+        classroom += "}";
+        return classroom;
+    }
 }

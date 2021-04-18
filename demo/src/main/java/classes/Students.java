@@ -2,9 +2,9 @@ package classes;
 
 import abstractclasses.People;
 
-import java.util.Iterator;
-import java.util.Spliterator;
+import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class Students extends People<Student> {
 
@@ -14,7 +14,7 @@ public class Students extends People<Student> {
 
     @Override
     public Iterator<Student> iterator() {
-        return null;
+        return super.findAll().iterator();
     }
 
     @Override
@@ -26,4 +26,15 @@ public class Students extends People<Student> {
     public Spliterator<Student> spliterator() {
         return super.spliterator();
     }
+
+    @Override
+    public String toString() {
+        String out = "Students{";
+        for (Student s : super.findAll()) {
+            out += s.toString();
+        }
+        out += "}";
+        return out;
+    }
+
 }

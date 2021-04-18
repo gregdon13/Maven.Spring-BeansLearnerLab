@@ -14,7 +14,7 @@ public class Instructors extends People<Instructor> {
 
     @Override
     public Iterator<Instructor> iterator() {
-        return null;
+        return super.findAll().iterator();
     }
 
     @Override
@@ -25,5 +25,15 @@ public class Instructors extends People<Instructor> {
     @Override
     public Spliterator<Instructor> spliterator() {
         return super.spliterator();
+    }
+
+    @Override
+    public String toString() {
+        String out = "{";
+        for (Instructor in : super.findAll()) {
+            out += in.toString();
+        }
+        out += "}";
+        return out;
     }
 }

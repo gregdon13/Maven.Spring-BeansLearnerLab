@@ -1,8 +1,7 @@
-package com.example.demo;
+package ConfigTests;
 
 import classes.Classroom;
 import configurations.ClassroomConfig;
-import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,12 +12,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes= ClassroomConfig.class)
 @SpringBootTest
-class Beans8ApplicationTests {
+public class TestClassroomConfig {
+    @Qualifier("currentCohort")
+    @Autowired
+    private Classroom classroom;
 
+    @Qualifier("previousCohort")
+    @Autowired
+    private Classroom classroomPrevious;
 
-	@Test
-	void contextLoads() {
-
-	}
 
 }

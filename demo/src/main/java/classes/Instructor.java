@@ -26,4 +26,9 @@ public class Instructor extends Person implements Teacher {
         int finalCounter = counter;
         learners.forEach(learner -> learner.learn(numberOfHours / finalCounter));
     }
+
+    @Override
+    public String toString() {
+        return "Instructor{" + "id=" + this.id + ", name=" + this.name + "}";
+    }
 }
