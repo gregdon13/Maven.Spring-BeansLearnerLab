@@ -21,7 +21,7 @@ public class TestStudentConfig {
     @Autowired
     private Students students;
 
-    @Qualifier("previousStudents")
+    @Qualifier("lastCohort")
     @Autowired
     private Students lastCohort;
 

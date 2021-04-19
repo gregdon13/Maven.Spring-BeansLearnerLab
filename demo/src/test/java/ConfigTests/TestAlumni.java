@@ -1,7 +1,6 @@
 package ConfigTests;
 
-import classes.Alumni;
-import classes.Classroom;
+import classes.*;
 import configurations.ClassroomConfig;
 import configurations.InstructorsConfig;
 import org.junit.Assert;
@@ -18,19 +17,25 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ContextConfiguration(classes = Alumni.class)
 @SpringBootTest
 public class TestAlumni {
-//    Alumni alumni = new Alumni();
-//    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ClassroomConfig.class);
-//    Alumni alumni = context.getBean(Alumni.class);
-//    alumni.
-//
-//
-//    @Test
-//    public void checkHoursLearned() {
-//        double expected = 1200.0;
-//        double actual = alumni.getLastCohort().findAll().get(0).getTotalStudyTime();
-//
-//        System.out.println(actual);
-//
-//        Assert.assertEquals(expected, actual);
-//    }
+    Alumni alumni = new Alumni();
+
+    @Test
+    public void checkHoursLearned() {
+        double expected = 1200.0;
+        alumni.executeBootcamp();
+
+        double actual = alumni.getClassroom().getStudents().findAll().get(0).getTotalStudyTime();
+
+        Assert.assertEquals(expected, actual, 1e-15);
+    }
+
+    @Test
+    public void checkHoursTaught() {
+        double expected = 3200.0;
+        alumni.executeBootcamp();
+
+        double actual = alumni.getClassroom().getInstructors().findAll().get(0).getNumberOfHoursTaught();
+
+        Assert.assertEquals(expected, actual, 1e-15);
+    }
 }

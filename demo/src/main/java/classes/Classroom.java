@@ -31,4 +31,20 @@ public class Classroom {
         classroom += "}";
         return classroom;
     }
+
+    public Students getStudents() {
+        return students;
+    }
+
+    public void setStudents(Students students) {
+        this.students = students;
+    }
+
+    public Instructors getInstructors() {
+        return instructors;
+    }
+
+    public void setInstructors(Instructors instructors) {
+        this.instructors = instructors;
+    }
 }

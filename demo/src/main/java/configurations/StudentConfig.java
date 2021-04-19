@@ -5,7 +5,7 @@ import classes.Students;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@Configuration("studentConfig")
 public class StudentConfig {
 
     @Bean(name = "students")
@@ -27,7 +27,7 @@ public class StudentConfig {
         return new Students(greg, jorge, kelly, chris, ashley, ryan, hazel, justin, theresa, mike, lena, monali, abe, xiong);
     }
 
-    @Bean
+    @Bean(name = "lastCohort")
     public Students previousStudents() {
         Student josh = new Student(1, "Josh");
         Student jeremy = new Student(2, "Jeremy");
