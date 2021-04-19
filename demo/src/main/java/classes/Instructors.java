@@ -12,6 +12,14 @@ public class Instructors extends People<Instructor> {
         super(instructors);
     }
 
+    public int numOfInstructors() {
+        int counter = 0;
+        for (Instructor in : super.findAll()) {
+            counter++;
+        }
+        return counter;
+    }
+
     @Override
     public Iterator<Instructor> iterator() {
         return super.findAll().iterator();

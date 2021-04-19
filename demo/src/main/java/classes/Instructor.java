@@ -7,9 +7,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Instructor extends Person implements Teacher {
+    double numberOfHoursTaught;
 
     public Instructor(long id, String name) {
         super(id, name);
+    }
+
+    public double getNumberOfHoursTaught() {
+        return numberOfHoursTaught;
+    }
+
+    public void setNumberOfHoursTaught(double numberOfHoursTaught) {
+        this.numberOfHoursTaught = numberOfHoursTaught;
     }
 
     @Override

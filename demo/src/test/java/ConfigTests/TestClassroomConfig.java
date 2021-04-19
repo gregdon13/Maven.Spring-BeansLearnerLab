@@ -22,7 +22,7 @@ public class TestClassroomConfig {
     @Autowired
     private Classroom currentClass;
 
-    @Qualifier("previousCohort")
+    @Qualifier("lastCohort")
     @Autowired
     private Classroom lastCohort;
 

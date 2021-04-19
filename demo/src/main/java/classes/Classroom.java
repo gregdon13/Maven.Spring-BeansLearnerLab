@@ -1,11 +1,13 @@
 package classes;
 
 import interfaces.Teacher;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class Classroom {
     Students students;
     Instructors instructors;
 
+    @Autowired
     public Classroom(Students students, Instructors instructors) {
         this.instructors = instructors;
         this.students = students;

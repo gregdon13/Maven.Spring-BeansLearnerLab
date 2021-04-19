@@ -12,6 +12,7 @@ public class Students extends People<Student> {
         super(student);
     }
 
+
     @Override
     public Iterator<Student> iterator() {
         return super.findAll().iterator();

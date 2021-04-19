@@ -1,27 +1,38 @@
 package configurations;
 
 import classes.Classroom;
+import classes.Instructors;
+import classes.Students;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
 @Configuration
 public class ClassroomConfig {
+    @Qualifier("instructors")
+    @Autowired
+    private Instructors instructors;
 
-    @Bean
-    //@DependsOn({"students", "instructors"})
+    @Qualifier("students")
+    @Autowired
+    private Students students;
+
+    @Qualifier("previousStudents")
+    @Autowired
+    private Students lastCohort;
+
+    @Bean("currentCohort")
+    @DependsOn(value = {"students", "instructors"})
     public Classroom currentCohort() {
-        StudentConfig studentConfig = new StudentConfig();
-        InstructorsConfig instructorsConfig = new InstructorsConfig();
-        return new Classroom(studentConfig.currentStudents(), instructorsConfig.zipcodeInstructors());
+        return new Classroom(students, instructors);
     }
 
-    @Bean
-    //@DependsOn({"previousStudents", "instructors"})
+    @Bean("lastCohort")
+    @DependsOn(value ={"previousStudents", "instructors"})
     public Classroom previousCohort() {
-        StudentConfig studentConfig = new StudentConfig();
-        InstructorsConfig instructorsConfig = new InstructorsConfig();
-        return new Classroom(studentConfig.previousStudents(), instructorsConfig.zipcodeInstructors());
+        return new Classroom(lastCohort, instructors);
     }
 
 }
